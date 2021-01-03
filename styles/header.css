@@ -5,7 +5,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5em 0.75em;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  backdrop-filter: blur(5px);
 }
 
 .header::before{
