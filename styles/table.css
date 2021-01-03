@@ -1,0 +1,28 @@
+.table{
+  width: 70%;
+  border-collapse: collapse;
+}
+
+.table__labels{
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.table__data{
+  width: 100%;
+  color: rgba(255,255,255,0.63);
+}
+
+.table__row{
+  border-bottom: 1px solid rgba(255,255,255,0.63);
+}
+
+.table__row--label{
+  border-bottom: 1px solid rgba(255,255,255,0.87);
+}
+
+.table__cell{
+  padding: 0.5em 0.25em;
+  text-align: center;
+  width: 25%;
+}
