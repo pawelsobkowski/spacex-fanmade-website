@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>spaceX</title>
     <link href="./styles/header.css" rel="stylesheet" />
+    <link href="./styles/main.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,400;0,500;1,700&display=swap"
@@ -12,7 +13,7 @@
     />
   </head>
   <body>
-    <div>
+    <div class="container">
       <!-- Navigation Bar -->
       <header class="header">
         <img src="images/spaceXlogo.svg" class="header__logo" />
@@ -26,10 +27,13 @@
         </nav>
       </header>
       <!-- Center -->
-      <div>
-        <div>
-          <h1>find your future</h1>
-          <p>
+      <div class="main">
+        <div class="main__hero">
+          <h1 class="hero__title">
+            find your
+            <span class="hero__title--bold">future</span>
+          </h1>
+          <p class="hero__description">
             Building on the achievements of Falcon 9 and Falcon Heavy, SpaceX is
             working on a next generation of fully reusable launch vehicles that
             will be the most powerful ever built, capable of carrying humans to
