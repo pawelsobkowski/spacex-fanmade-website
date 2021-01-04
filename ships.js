@@ -39,19 +39,70 @@ const setCurrentViewData = (rockets, launches, hash) => {
 
   //setting launches
   const tbody = document.querySelector('.table__data');
-  const row = document.createElement('tr');
-  const cell = document.createElement('td');
+  tbody.innerHTML = '';
 
   const rocketLaunches = launches.filter((el) => el.rocket === rocket.id);
-  console.log(rocketLaunches);
+
+  if (rocketLaunches.length <= 0) {
+    const row = document.createElement('tr');
+    row.classList.add('table__row');
+    const cell = document.createElement('td');
+    cell.classList.add('table__cell');
+    cell.innerText = 'Brak danych do wyświetlenia';
+    cell.colSpan = 4;
+
+    row.appendChild(cell);
+    tbody.appendChild(row);
+
+    return;
+  }
+
+  rocketLaunches.forEach((el) => {
+    const row = document.createElement('tr');
+    row.classList.add('table__row');
+
+    const cell_patch = document.createElement('td');
+    const cell_name = document.createElement('td');
+    const cell_date = document.createElement('td');
+    const cell_success = document.createElement('td');
+
+    const img = document.createElement('img');
+    img.classList.add('table__cell__img');
+    img.alt = `${el.name} mission patch`;
+    img.src = el.links.patch.small;
+
+    cell_patch.classList.add('table__cell');
+    cell_name.classList.add('table__cell');
+    cell_date.classList.add('table__cell');
+    cell_success.classList.add('table__cell');
+
+    const splitedDate = el.date_utc.split('T');
+    const date = `${splitedDate[0]} ${splitedDate[1].split(':')[0]}:${
+      splitedDate[1].split(':')[1]
+    } UTC`;
+
+    cell_patch.appendChild(img);
+    cell_name.innerText = el.name;
+    cell_date.innerText = date;
+    cell_success.innerText = el.success;
+
+    row.appendChild(cell_patch);
+    row.appendChild(cell_name);
+    row.appendChild(cell_date);
+    row.appendChild(cell_success);
+
+    tbody.appendChild(row);
+  });
 };
 
+//fired when view is change
 const changeView = (e, rockets, launches) => {
   const hash = getHash(e.target);
   changeActiveLink(e.target);
   setCurrentViewData(rockets, launches, hash);
 };
 
+//fetching functions
 const fetchRockets = () => fetch('https://api.spacexdata.com/v4/rockets');
 const fetchLaunches = () =>
   fetch('https://api.spacexdata.com/v4/launches/query', {
@@ -66,6 +117,7 @@ const fetchLaunches = () =>
     }),
   });
 
+//main
 document.addEventListener('DOMContentLoaded', async () => {
   let rockets, launches;
   const links = document.querySelectorAll('.nav__list__element > a');
