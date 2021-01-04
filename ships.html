@@ -1,88 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>spaceX</title>
-</head>
-    <body>
-        <div>
-            <!-- Navigation Bar -->
-            <header>
-                <img src="images/spaceXlogo.svg">
-                <nav>
-                    <ul>
-                        <li><a>Falcon 1</a></li>
-                        <li><a>Falcon 9</a></li>
-                        <li><a>Falcon Heavy</a></li>
-                        <li><a>Starship</a></li>
-                    </ul>
-                </nav>
-            </header>
-            <!-- Center -->
-            <div>
-                <!-- first stage -->
-                <section>
-                    <h1>ship name</h1>
-                    <p>status: status</p>
-                    <p>long fancy description</p>
-                    <!-- overview -->
-                    <div>
-                        <h3>overview</h3>
-                        <ul>
-                            <li>
-                                <p>height</p>
-                                <p>00.00</p>
-                            </li>
-                            <li>
-                                <p>diameter</p>
-                                <p>00.00</p>
-                            </li>
-                            <li>
-                                <p>mass</p>
-                                <p>00.00</p>
-                            </li>
-                            <li>
-                                <p>payload to leo</p>
-                                <p>00.00</p>
-                            </li>
-                            <li>
-                                <p>stages</p>
-                                <p>00.00</p>
-                            </li>
-                            <li>
-                                <p>first flight</p>
-                                <p>00.00</p>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-                <!-- second stage -->
-                <section>
-                    <!-- launches -->
-                    <div>
-                        <h3>launches</h3>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>patch</th>
-                                    <th>name</th>
-                                    <th>date</th>
-                                    <th>success</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>logo</td>
-                                    <td>ship name</td>
-                                    <td>date</td>
-                                    <td>false</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </body>
+    <link href="./styles/header.css" rel="stylesheet" />
+    <link href="./styles/main.css" rel="stylesheet" />
+    <link href="./styles/subpage.css" rel="stylesheet" />
+    <link href="./styles/table.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,400;0,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container--subpage">
+      <!-- Navigation Bar -->
+      <header class="header">
+        <img src="images/spaceXlogo.svg" class="header__logo" />
+        <nav class="header__nav">
+          <ul class="nav__list">
+            <li class="nav__list__element"><a>Falcon 1</a></li>
+            <li class="nav__list__element"><a>Falcon 9</a></li>
+            <li class="nav__list__element"><a>Falcon Heavy</a></li>
+            <li class="nav__list__element"><a>Starship</a></li>
+          </ul>
+        </nav>
+      </header>
+      <!-- Center -->
+      <div class="main--subpage">
+        <!-- first stage -->
+        <section class="section">
+          <h1 class="section__title">ship name</h1>
+          <p class="section__subtitle">status: status</p>
+          <p class="section__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+            consequat eros at tortor laoreet finibus. Pellentesque vestibulum
+            lobortis ultricies. Maecenas mollis consequat enim ac convallis.
+            Aliquam tristique vitae tellus vel hendrerit. Orci varius natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          </p>
+          <!-- overview -->
+          <div class="section__overview">
+            <h3 class="overview__title">overview</h3>
+            <ul class="overview__list">
+              <li class="overview__list__element">
+                <span class="overview__list__element__property">height</span>
+                <span class="overview__list__element__value">00.00</span>
+              </li>
+              <li class="overview__list__element">
+                <span class="overview__list__element__property">diameter</span>
+                <span class="overview__list__element__value">00.00</span>
+              </li>
+              <li class="overview__list__element">
+                <span class="overview__list__element__property">mass</span>
+                <span class="overview__list__element__value">00.00</span>
+              </li>
+              <li class="overview__list__element">
+                <span class="overview__list__element__property">
+                  payload to leo
+                </span>
+                <span class="overview__list__element__value">00.00</span>
+              </li>
+              <li class="overview__list__element">
+                <span class="overview__list__element__property">stages</span>
+                <span class="overview__list__element__value">00.00</span>
+              </li>
+              <li class="overview__list__element">
+                <span class="overview__list__element__property">
+                  first flight
+                </span>
+                <span class="overview__list__element__value">00.00</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!-- second stage -->
+        <section class="section">
+          <!-- launches -->
+          <h3 class="section__title">launches</h3>
+          <table class="table">
+            <thead class="table__labels">
+              <tr class="table__row--label">
+                <th class="table__cell">patch</th>
+                <th class="table__cell">name</th>
+                <th class="table__cell">date</th>
+                <th class="table__cell">success</th>
+              </tr>
+            </thead>
+            <tbody class="table__data">
+              <tr class="table__row">
+                <td class="table__cell">logo</td>
+                <td class="table__cell">ship name</td>
+                <td class="table__cell">date</td>
+                <td class="table__cell">false</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+  </body>
 </html>

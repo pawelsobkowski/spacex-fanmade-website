@@ -1,0 +1,21 @@
+{
+  "name": "spacex-fanmade-website",
+  "version": "1.0.0",
+  "description": "Website created by fans of space exploration and SpaceX.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync -s './' -f './'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://pawelsobkowski@github.com/pawelsobkowski/spacex-fanmade-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pawelsobkowski/spacex-fanmade-website/issues"
+  },
+  "homepage": "https://github.com/pawelsobkowski/spacex-fanmade-website#readme",
+  "dependencies": {}
+}
