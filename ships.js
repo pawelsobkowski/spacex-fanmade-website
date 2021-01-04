@@ -12,8 +12,6 @@ const changeActiveLink = (activeEl) => {
 const setCurrentViewData = (rockets, hash) => {
   const [rocket] = rockets.filter((r) => r.name.replace(/\s/g, '').toLowerCase() === hash);
 
-  console.log(rocket);
-
   const title = document.querySelector('.section__title');
   const status = document.querySelector('.section__subtitle > span');
   const desc = document.querySelector('.section__description');
@@ -56,7 +54,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const data = await fetchRockets();
     rockets = await data.json();
     setCurrentViewData(rockets, hash);
-    console.log(rockets);
   } catch (e) {
     console.log(e);
   }
