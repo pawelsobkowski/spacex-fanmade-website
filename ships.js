@@ -23,6 +23,7 @@ const setCurrentViewData = (rockets, hash) => {
   const leo = document.querySelector('.overview__list__element__value--leo');
   const stages = document.querySelector('.overview__list__element__value--stages');
   const firstflight = document.querySelector('.overview__list__element__value--firstflight');
+  const section = document.querySelectorAll('.section')[0];
 
   title.innerText = rocket.name;
   status.innerText = rocket.status ? 'active' : 'inactive';
@@ -33,6 +34,9 @@ const setCurrentViewData = (rockets, hash) => {
   leo.innerText = `${rocket.payload_weights[0].kg} kg`;
   stages.innerText = rocket.stages;
   firstflight.innerText = rocket.first_flight;
+
+  section.style.background = `url(${rocket.flickr_images[1]}) no-repeat center`;
+  section.style.backgroundSize = 'cover';
 };
 
 const changeView = (e, rockets) => {
