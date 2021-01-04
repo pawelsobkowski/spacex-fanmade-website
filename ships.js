@@ -9,9 +9,10 @@ const changeActiveLink = (activeEl) => {
   activeEl.parentNode.classList.add('nav__list__element--active');
 };
 
-const setCurrentViewData = (rockets, hash) => {
+const setCurrentViewData = (rockets, launches, hash) => {
   const [rocket] = rockets.filter((r) => r.name.replace(/\s/g, '').toLowerCase() === hash);
 
+  //setting rockets
   const title = document.querySelector('.section__title');
   const status = document.querySelector('.section__subtitle > span');
   const desc = document.querySelector('.section__description');
@@ -35,28 +36,52 @@ const setCurrentViewData = (rockets, hash) => {
 
   section.style.background = `url(${rocket.flickr_images[1]}) no-repeat center`;
   section.style.backgroundSize = 'cover';
+
+  //setting launches
+  const tbody = document.querySelector('.table__data');
+  const row = document.createElement('tr');
+  const cell = document.createElement('td');
+
+  const rocketLaunches = launches.filter((el) => el.rocket === rocket.id);
+  console.log(rocketLaunches);
 };
 
-const changeView = (e, rockets) => {
+const changeView = (e, rockets, launches) => {
   const hash = getHash(e.target);
   changeActiveLink(e.target);
-  setCurrentViewData(rockets, hash);
+  setCurrentViewData(rockets, launches, hash);
 };
 
 const fetchRockets = () => fetch('https://api.spacexdata.com/v4/rockets');
+const fetchLaunches = () =>
+  fetch('https://api.spacexdata.com/v4/launches/query', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      query: {},
+      options: {
+        select: ['name', 'links.patch.small', 'rocket', 'success', 'date_utc'],
+        limit: 127,
+      },
+    }),
+  });
 
 document.addEventListener('DOMContentLoaded', async () => {
-  let rockets;
+  let rockets, launches;
   const links = document.querySelectorAll('.nav__list__element > a');
   const hash = window.location.hash.split('#')[1];
   changeActiveLink(getElFromHash(hash)[0]);
   try {
     const data = await fetchRockets();
     rockets = await data.json();
-    setCurrentViewData(rockets, hash);
+
+    const launches_data = await fetchLaunches();
+    launches = await launches_data.json();
+
+    setCurrentViewData(rockets, launches.docs, hash);
   } catch (e) {
     console.log(e);
   }
 
-  links.forEach((el) => el.addEventListener('click', (e) => changeView(e, rockets)));
+  links.forEach((el) => el.addEventListener('click', (e) => changeView(e, rockets, launches.docs)));
 });
