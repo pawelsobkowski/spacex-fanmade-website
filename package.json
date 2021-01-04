@@ -17,9 +17,5 @@
     "url": "https://github.com/pawelsobkowski/spacex-fanmade-website/issues"
   },
   "homepage": "https://github.com/pawelsobkowski/spacex-fanmade-website#readme",
-  "dependencies": {
-    "node-sass": "^5.0.0",
-    "onchange": "^7.1.0",
-    "parallelshell": "^3.0.1"
-  }
+  "dependencies": {}
 }
