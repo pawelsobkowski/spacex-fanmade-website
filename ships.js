@@ -57,7 +57,8 @@ const setCurrentViewData = (rockets, launches, hash) => {
     return;
   }
 
-  rocketLaunches.forEach((el) => {
+  rocketLaunches.forEach((el, i) => {
+    if (i >= 7) return;
     const row = document.createElement('tr');
     row.classList.add('table__row');
 
