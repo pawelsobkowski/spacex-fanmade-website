@@ -21,8 +21,12 @@
   border-bottom: 1px solid rgba(255,255,255,0.87);
 }
 
-.table__cell{
+.table__cell {
   padding: 0.5em 0.25em;
   text-align: center;
   width: 25%;
+}
+
+.table__cell__img {
+  width: 40px;
 }

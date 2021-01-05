@@ -21,10 +21,10 @@
         <img src="images/spaceXlogo.svg" class="header__logo" />
         <nav class="header__nav">
           <ul class="nav__list">
-            <li class="nav__list__element"><a>Falcon 1</a></li>
-            <li class="nav__list__element"><a>Falcon 9</a></li>
-            <li class="nav__list__element"><a>Falcon Heavy</a></li>
-            <li class="nav__list__element"><a>Starship</a></li>
+            <li class="nav__list__element"><a href="ships.html#falcon1">Falcon 1</a></li>
+            <li class="nav__list__element"><a href="ships.html#falcon9">Falcon 9</a></li>
+            <li class="nav__list__element"><a href="ships.html#falconheavy">Falcon Heavy</a></li>
+            <li class="nav__list__element"><a href="ships.html#starship">Starship</a></li>
           </ul>
         </nav>
       </header>
@@ -33,7 +33,7 @@
         <!-- first stage -->
         <section class="section">
           <h1 class="section__title">ship name</h1>
-          <p class="section__subtitle">status: status</p>
+          <p class="section__subtitle">status: <span>status</span></p>
           <p class="section__description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
             consequat eros at tortor laoreet finibus. Pellentesque vestibulum
@@ -47,31 +47,31 @@
             <ul class="overview__list">
               <li class="overview__list__element">
                 <span class="overview__list__element__property">height</span>
-                <span class="overview__list__element__value">00.00</span>
+                <span class="overview__list__element__value overview__list__element__value--height">00.00</span>
               </li>
               <li class="overview__list__element">
                 <span class="overview__list__element__property">diameter</span>
-                <span class="overview__list__element__value">00.00</span>
+                <span class="overview__list__element__value overview__list__element__value--diameter">00.00</span>
               </li>
               <li class="overview__list__element">
                 <span class="overview__list__element__property">mass</span>
-                <span class="overview__list__element__value">00.00</span>
+                <span class="overview__list__element__value overview__list__element__value--mass">00.00</span>
               </li>
               <li class="overview__list__element">
                 <span class="overview__list__element__property">
                   payload to leo
                 </span>
-                <span class="overview__list__element__value">00.00</span>
+                <span class="overview__list__element__value overview__list__element__value--leo">00.00</span>
               </li>
               <li class="overview__list__element">
                 <span class="overview__list__element__property">stages</span>
-                <span class="overview__list__element__value">00.00</span>
+                <span class="overview__list__element__value overview__list__element__value--stages">00.00</span>
               </li>
               <li class="overview__list__element">
                 <span class="overview__list__element__property">
                   first flight
                 </span>
-                <span class="overview__list__element__value">00.00</span>
+                <span class="overview__list__element__value overview__list__element__value--firstflight">00.00</span>
               </li>
             </ul>
           </div>
@@ -89,17 +89,11 @@
                 <th class="table__cell">success</th>
               </tr>
             </thead>
-            <tbody class="table__data">
-              <tr class="table__row">
-                <td class="table__cell">logo</td>
-                <td class="table__cell">ship name</td>
-                <td class="table__cell">date</td>
-                <td class="table__cell">false</td>
-              </tr>
-            </tbody>
+            <tbody class="table__data"></tbody>
           </table>
         </section>
       </div>
     </div>
   </body>
+  <script src="ships.js" ></script>
 </html>
