@@ -48,7 +48,7 @@ const setCurrentViewData = (rockets, launches, hash) => {
     row.classList.add('table__row');
     const cell = document.createElement('td');
     cell.classList.add('table__cell');
-    cell.innerText = 'Brak danych do wyświetlenia';
+    cell.innerText = 'No data to display';
     cell.colSpan = 4;
 
     row.appendChild(cell);
