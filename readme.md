@@ -2,6 +2,8 @@
 
 Website created by fans of space exploration and SpaceX.
 
+Link to demo: [spacex-fanmade-website](https://pawelsobkowski.github.io/spacex-fanmade-website/ships.html#falcon1)
+
 ## Layout
 
 ![index](https://user-images.githubusercontent.com/47826072/103479888-0d34cd80-4dd1-11eb-8e47-ecb7732b4514.png)
