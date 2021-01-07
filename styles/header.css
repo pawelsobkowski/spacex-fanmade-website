@@ -42,8 +42,12 @@
 }
 
 .nav__list__element{
-  color: rgba(255, 255, 255, 0.87);
   cursor: pointer;
+}
+
+.nav__list__element > a {
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: none;
 }
 
 .nav__list__element:hover, .nav__list__element--active{
