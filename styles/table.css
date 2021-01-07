@@ -1,6 +1,7 @@
 .table{
   width: 70%;
   border-collapse: collapse;
+  z-index: 1;
 }
 
 .table__labels{
